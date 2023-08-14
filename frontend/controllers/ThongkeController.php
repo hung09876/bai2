@@ -66,7 +66,7 @@ class ThongkeController extends Controller{
         ->from('thongke')
         ->innerJoin('sinhvien','sinhvien.idsinhvien= thongke.idsinhvien')
         ->innerJoin('monhoc','monhoc.idmonhoc= thongke.idmonhoc')
-        ->where("sinhvien.idsinhvien= {$idmonhoc}");
+        ->where("monhoc.idmonhoc= {$idmonhoc}");
         $model = $qr->all();
         return $this->render('thongtin',['model'=>$model]);
     }
